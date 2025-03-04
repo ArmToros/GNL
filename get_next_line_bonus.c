@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: armtoros <armtoros@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/09 18:55:56 by tigpetro          #+#    #+#             */
-/*   Updated: 2025/03/04 17:12:35 by armtoros         ###   ########.fr       */
+/*   Created: 2024/02/16 11:51:20 by tigpetro          #+#    #+#             */
+/*   Updated: 2025/03/04 17:12:43 by armtoros         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 static char	*null(char **line)
 {
@@ -20,26 +20,26 @@ static char	*null(char **line)
 
 char	*get_next_line(int fd)
 {
-	static char	*line;
+	static char	*line[OPEN_MAX];
 	char		*next_lines;
 
 	if (fd < 0 || BUFFER_SIZE < 1 || read(fd, 0, 0) < 0)
-		return (null(&line));
-	if (!line)
+		return (null(&line[fd]));
+	if (!line[fd])
 	{
-		line = (char *)malloc(1);
-		if (!line)
+		line[fd] = (char *)malloc(1);
+		if (!line[fd])
 			return (0);
-		line[0] = '\0';
+		line[fd][0] = '\0';
 	}
 	else
 	{
-		next_lines = ft_strchr(line, '\n');
+		next_lines = ft_strchr(line[fd], '\n');
 		if (!next_lines)
-			return (null(&line));
+			return (null(&line[fd]));
 		else
-			new_line(&line, next_lines + 1);
+			new_line(&line[fd], next_lines + 1);
 	}
-	ft_read(fd, &line);
-	return (ft_strdup(&line));
+	ft_read(fd, &line[fd]);
+	return (ft_strdup(&line[fd]));
 }

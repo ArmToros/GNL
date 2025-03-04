@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line_utils.c                              :+:      :+:    :+:   */
+/*   get_next_line_utils_bonus.c                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: armtoros <armtoros@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/09 19:33:17 by tigpetro          #+#    #+#             */
-/*   Updated: 2025/03/04 17:12:51 by armtoros         ###   ########.fr       */
+/*   Created: 2024/02/16 11:50:11 by tigpetro          #+#    #+#             */
+/*   Updated: 2025/03/04 17:12:55 by armtoros         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 char	*ft_strchr(char *s, int c)
 {

@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.h                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: armtoros <armtoros@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/09 18:51:34 by tigpetro          #+#    #+#             */
-/*   Updated: 2025/03/04 17:10:59 by armtoros         ###   ########.fr       */
+/*   Created: 2024/02/16 11:50:34 by tigpetro          #+#    #+#             */
+/*   Updated: 2025/03/04 17:10:51 by armtoros         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
+#ifndef GET_NEXT_LINE_BONUS_H
+# define GET_NEXT_LINE_BONUS_H
 
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 42
@@ -23,6 +23,7 @@
 # include <stdlib.h>
 # include <fcntl.h>
 # include <string.h>
+# include <limits.h>
 
 char	*get_next_line(int fd);
 void	ft_strjoin(char **line, char *buff);
